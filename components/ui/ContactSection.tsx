@@ -3,40 +3,51 @@
 import React from 'react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { Button } from '@/components/ui/button';
-import { StarsBackground } from '@/components/ui/stars-background'; // Add this import
-import { ShootingStars } from '@/components/ui/shooting-star'; // Add this import
-
+import { StarsBackground } from '@/components/ui/stars-background';
+import { ShootingStars } from '@/components/ui/shooting-star';
 
 const ContactSection = () => {
   return (
     <section id="contact" className="bg-neutral-900 py-20 text-center">
-      {/* Add the components here */}
+      {/* Background effects */}
       <StarsBackground />
       <ShootingStars minDelay={200} maxDelay={800} />
-      
-      <h2 className="text-4xl font-bold mb-4 text-white">Let&apos;s Work Together</h2>
-      <p className="text-neutral-400 max-w-2xl mx-auto mb-10">
-        I&apos;m always interested in new opportunities and exciting projects. Let&apos;s create something amazing together.
+
+      {/* Heading */}
+      <h2 className="text-2xl sm:text-4xl font-bold mb-3 text-white">
+        Let&apos;s Work Together
+      </h2>
+      <p className="text-sm sm:text-base text-neutral-400 max-w-xl mx-auto mb-8">
+        I&apos;m always interested in new opportunities and exciting projects.
+        Let&apos;s create something amazing together.
       </p>
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+
+      {/* Buttons layout */}
+      <div className="grid grid-cols-2 gap-3 max-w-md mx-auto sm:flex sm:flex-wrap sm:justify-center sm:gap-4">
         {/* Get In Touch */}
-        <Button asChild className="bg-blue-600 text-white hover:bg-blue-700 transition">
-          <a href="mailto:skouzt3@gmail.com">
+        <Button
+          asChild
+          className="bg-blue-600 text-white hover:bg-blue-700 transition w-full px-3 py-1.5 text-sm rounded-lg"
+        >
+          <a href="mailto:skouzt3@gmail.com" target="_blank" rel="noopener noreferrer">
             Get In Touch
           </a>
         </Button>
 
         {/* Download Resume */}
-        <Button asChild className="bg-neutral-800 text-white hover:bg-neutral-700 transition">
+        <Button
+          asChild
+          className="bg-neutral-800 text-white hover:bg-neutral-700 transition w-full px-3 py-1.5 text-sm rounded-lg"
+        >
           <a href="/Resume.pdf" download="Rashid_Kamar_Resume.pdf">
             Download Resume
           </a>
         </Button>
 
         {/* LinkedIn */}
-        <Button 
-          asChild 
-          className="border border-neutral-700 bg-transparent text-neutral-400 hover:bg-neutral-800 transition"
+        <Button
+          asChild
+          className="border border-neutral-700 bg-transparent text-neutral-400 hover:bg-neutral-800 transition w-full px-3 py-1.5 text-sm rounded-lg"
         >
           <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
             <FaLinkedin className="mr-2 h-4 w-4" />
@@ -45,9 +56,9 @@ const ContactSection = () => {
         </Button>
 
         {/* GitHub */}
-        <Button 
-          asChild 
-          className="border border-neutral-700 bg-transparent text-neutral-400 hover:bg-neutral-800 transition"
+        <Button
+          asChild
+          className="border border-neutral-700 bg-transparent text-neutral-400 hover:bg-neutral-800 transition w-full px-3 py-1.5 text-sm rounded-lg"
         >
           <a href="https://github.com/skouzt" target="_blank" rel="noopener noreferrer">
             <FaGithub className="mr-2 h-4 w-4" />
