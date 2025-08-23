@@ -9,45 +9,34 @@ import { ShootingStars } from '@/components/ui/shooting-star';
 const ContactSection = () => {
   return (
     <section id="contact" className="bg-neutral-900 py-20 text-center">
-      {/* Background effects */}
       <StarsBackground />
       <ShootingStars minDelay={200} maxDelay={800} />
-
-      {/* Heading */}
-      <h2 className="text-2xl sm:text-4xl font-bold mb-3 text-white">
-        Let&apos;s Work Together
-      </h2>
-      <p className="text-sm sm:text-base text-neutral-400 max-w-xl mx-auto mb-8">
-        I&apos;m always interested in new opportunities and exciting projects.
-        Let&apos;s create something amazing together.
+      
+      <h2 className="text-2xl sm:text-4xl font-bold mb-4 text-white">Let&apos;s Work Together</h2>
+      <p className="text-sm sm:text-base text-neutral-400 max-w-2xl mx-auto mb-10">
+        I&apos;m always interested in new opportunities and exciting projects. Let&apos;s create something amazing together.
       </p>
-
-      {/* Buttons layout */}
-      <div className="grid grid-cols-2 gap-3 max-w-md mx-auto sm:flex sm:flex-wrap sm:justify-center sm:gap-4">
+      
+      {/* The responsive button container */}
+      <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4">
         {/* Get In Touch */}
-        <Button
-          asChild
-          className="bg-blue-600 text-white hover:bg-blue-700 transition w-full px-3 py-1.5 text-sm rounded-lg"
-        >
+        <Button asChild className="bg-blue-600 text-white hover:bg-blue-700 transition px-3 py-2 text-sm sm:px-4 sm:py-2 sm:text-base w-full sm:w-auto">
           <a href="mailto:skouzt3@gmail.com" target="_blank" rel="noopener noreferrer">
             Get In Touch
           </a>
         </Button>
 
         {/* Download Resume */}
-        <Button
-          asChild
-          className="bg-neutral-800 text-white hover:bg-neutral-700 transition w-full px-3 py-1.5 text-sm rounded-lg"
-        >
+        <Button asChild className="bg-neutral-800 text-white hover:bg-neutral-700 transition px-3 py-2 text-sm sm:px-4 sm:py-2 sm:text-base w-full sm:w-auto">
           <a href="/Resume.pdf" download="Rashid_Kamar_Resume.pdf">
             Download Resume
           </a>
         </Button>
 
         {/* LinkedIn */}
-        <Button
-          asChild
-          className="border border-neutral-700 bg-transparent text-neutral-400 hover:bg-neutral-800 transition w-full px-3 py-1.5 text-sm rounded-lg"
+        <Button 
+          asChild 
+          className="border border-neutral-700 bg-transparent text-neutral-400 hover:bg-neutral-800 transition px-3 py-2 text-sm sm:px-4 sm:py-2 sm:text-base w-full sm:w-auto"
         >
           <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
             <FaLinkedin className="mr-2 h-4 w-4" />
@@ -56,9 +45,9 @@ const ContactSection = () => {
         </Button>
 
         {/* GitHub */}
-        <Button
-          asChild
-          className="border border-neutral-700 bg-transparent text-neutral-400 hover:bg-neutral-800 transition w-full px-3 py-1.5 text-sm rounded-lg"
+        <Button 
+          asChild 
+          className="border border-neutral-700 bg-transparent text-neutral-400 hover:bg-neutral-800 transition px-3 py-2 text-sm sm:px-4 sm:py-2 sm:text-base w-full sm:w-auto"
         >
           <a href="https://github.com/skouzt" target="_blank" rel="noopener noreferrer">
             <FaGithub className="mr-2 h-4 w-4" />
