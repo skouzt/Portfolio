@@ -23,7 +23,6 @@ export const skillsData: Skill[] = [
   { name: 'Python', category: 'Backend', icon: FaPython },
   { name: 'Git', category: 'Tools', icon: FaGitAlt },
   { name: 'Vue.js', category: 'Frontend', icon: SiVuedotjs },
-  { name: 'GraphQL', category: 'API', icon: SiGraphql },
   { name: 'Figma', category: 'Design', icon: SiFigma },
-  { name: 'Docker', category: 'Tools', icon: SiDocker },
+  
 ];
