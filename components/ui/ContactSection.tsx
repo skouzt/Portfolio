@@ -3,31 +3,31 @@
 import React from 'react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { Button } from '@/components/ui/button';
-import { StarsBackground } from '@/components/ui/stars-background'; // Corrected import path
-import { ShootingStars } from '@/components/ui/shooting-star'; // Corrected import path
+
 
 const ContactSection = () => {
   return (
-
     <section id="contact" className="bg-neutral-900 py-20 text-center">
-        <StarsBackground />
-        <ShootingStars minDelay={200} maxDelay={800} />
-      <h2 className="text-4xl font-bold mb-4 text-white">Let's Work Together</h2>
+     
+      <h2 className="text-4xl font-bold mb-4 text-white">Let&apos;s Work Together</h2>
       <p className="text-neutral-400 max-w-2xl mx-auto mb-10">
-        I'm always interested in new opportunities and exciting projects. Let's create something amazing together.
+        I&apos;m always interested in new opportunities and exciting projects. Let&apos;s create something amazing together.
       </p>
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
         {/* Get In Touch */}
-        <Button
-            asChild
-            className="bg-neutral-800 text-white hover:bg-neutral-700 transition"
-            >
-            <a href="/Resume.pdf" download="Rashid_Kamar_Resume.pdf">
-                Download Resume
+        <Button asChild className="bg-blue-600 text-white hover:bg-blue-700 transition">
+            <a href="mailto:your-email@example.com">
+                Get In Touch
             </a>
         </Button>
 
-        
+        {/* Download Resume */}
+        <Button asChild className="bg-neutral-800 text-white hover:bg-neutral-700 transition">
+          <a href="/Resume.pdf" download="Rashid_Kamar_Resume.pdf">
+            Download Resume
+          </a>
+        </Button>
+
         {/* LinkedIn */}
         <Button 
           asChild 
