@@ -23,7 +23,7 @@ const ProjectsSection: React.FC = () => {
 
   return (
     <section className="py-20">
-      <h2 className="text-center text-4xl font-bold mb-12 text-white">My Projects</h2>
+    <h2 className="relative text-2xl sm:text-3xl md:text-5xl md:leading-tight tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-white to-white text-center mb-12">My Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         {projects.map((project, index) => (
           <MinimalCard key={index} onClick={() => openModal(project)} className="cursor-pointer">

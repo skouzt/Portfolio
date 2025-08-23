@@ -26,28 +26,28 @@ const Page = () => {
                 <StarsBackground />
                 <ShootingStars minDelay={200} maxDelay={800} />
 
-                <div className="z-10 text-center my-4"> {/* Added my-4 for spacing */}
+                <div className="z-10 text-center my-4">
                     <h1 className="relative text-2xl sm:text-3xl md:text-5xl md:leading-tight tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-white to-white">
                         Rashid Kamar
                     </h1>
                     <p className='text-md sm:text-lg mt-2 text-white/80'>Software Engineer & Computer Science Student</p>
-                    <p className='text-sm mt-1 text-white/60'>Crafting seamless digital experiences with code and creativity.</p>
+                    <p className='text-sm mt-1 text-white/60 sm:text-lg'>Crafting seamless digital experiences with code and creativity.</p>
                 </div>
                 <div className='flex absolute bottom-8 sm:bottom-16 animate-bounce'>
                     <div onClick={scrolldown} className="cursor-pointer">
                         <Image
                             src="/down-arrow.svg"
                             alt="down"
-                            width={20} // Smaller size for mobile
+                            width={20}
                             height={20}
-                            className="w-[20px] h-[20px] sm:w-[30px] sm:h-[30px]"
+                            className="hidden sm:block" 
                             priority
                         />
                     </div>
                 </div>
             </section>
 
-            {/* Other Sections */}
+          
             <section id='about' className="bg-neutral-900 flex flex-col items-center justify-center relative w-full py-10 sm:py-20">
                 <StarsBackground />
                 <ShootingStars minDelay={200} maxDelay={800} />
@@ -65,7 +65,7 @@ const Page = () => {
                     </h1>
                     <p className='text-sm mt-1 text-white/60'>My professional journey and the experiences that have shaped my development career</p>
                 </div>
-                <div className="relative w-full overflow-clip mb-15">
+                <div className="relative w-full overflow-clip">
                     <Timelinedata />
                 </div>
             </section>
@@ -98,8 +98,9 @@ const Page = () => {
                     <ProjectsSection />
                 </div>
             </section>
-            
+            <div >
             <ContactSection />
+            </div>
         </>
     );
 };

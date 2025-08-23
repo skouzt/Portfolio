@@ -18,7 +18,7 @@ const ContactSection = () => {
       </p>
       
       {/* The responsive button container */}
-      <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4">
+      <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 p-10">
         {/* Get In Touch */}
         <Button asChild className="bg-blue-600 text-white hover:bg-blue-700 transition px-3 py-2 text-sm sm:px-4 sm:py-2 sm:text-base w-full sm:w-auto">
           <a href="mailto:skouzt3@gmail.com" target="_blank" rel="noopener noreferrer">
