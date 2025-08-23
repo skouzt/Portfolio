@@ -11,8 +11,9 @@ export default function AboutMe() {
 
   return (
     <section id="about" className="flex justify-center items-center py-20">
-      <div className="max-w-2xl w-full bg-white/5 backdrop-blur-3 xl rounded-2xl p-8 shadow-xl border border-white/20">
-        <h2 className="text-2xl font-bold text-center mb-6">About Me</h2>
+      <div className="max-w-2xl w-full bg-gradient-to-br from-neutral-900/70 to-neutral-800/70 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-white/10">
+
+        <h2 className=" text-gray-300 text-2xl font-bold text-center mb-6">About Me</h2>
 
         <div className="text-gray-300 space-y-4 text-center leading-relaxed">
           <p>
@@ -47,7 +48,7 @@ export default function AboutMe() {
 
         {/* Interests */}
         <div className="mt-8 text-center">
-          <h3 className="font-semibold mb-4">When I&apos;m not coding</h3>
+          <h3 className=" text-gray-300 font-semibold mb-4">When I&apos;m not coding</h3>
           <div className="flex flex-wrap justify-center gap-2">
             {interests.map((item) => (
               <span
