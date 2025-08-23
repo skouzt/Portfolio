@@ -1,9 +1,7 @@
-'use client';
-
+import type { Metadata } from "next"; // Make sure this import is present
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/ui/navbar";
-
+import ClientLayoutWrapper from "./ClientLayoutWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +13,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
+// Add the metadata export back here
+export const metadata: Metadata = {
+  title: "Rashid's Portfolio",
+  description:
+    "Rashid Kamar's personal portfolio website showcasing projects, skills, and experience.",
+};
 
 export default function RootLayout({
   children,
@@ -25,9 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Navbar />
-        
-        {children}
+        <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
       </body>
     </html>
   );
