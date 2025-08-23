@@ -15,11 +15,11 @@ const ContactSection = () => {
       </p>
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
         {/* Get In Touch */}
-        <Button asChild className="bg-blue-600 text-white hover:bg-blue-700 transition">
-            <a href="mailto:your-email@example.com">
-                Get In Touch
-            </a>
-        </Button>
+            <Button asChild className="bg-blue-600 text-white hover:bg-blue-700 transition">
+                <a href="mailto:skouzt3@gmail.com">
+                    Get In Touch
+                </a>
+            </Button>
 
         {/* Download Resume */}
         <Button asChild className="bg-neutral-800 text-white hover:bg-neutral-700 transition">

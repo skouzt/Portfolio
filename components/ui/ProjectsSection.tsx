@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Modal from '@/components/ui/modal';
 import { projects, Project } from '@/data/projects';
 import { FaGithub } from 'react-icons/fa';
+import Image from 'next/image';
 
 const ProjectsSection: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -37,7 +38,7 @@ const ProjectsSection: React.FC = () => {
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <h3 className="text-2xl font-bold text-white mb-2">{selectedProject.title}</h3>
           <p className="text-neutral-400 mb-4">{selectedProject.fullDescription}</p>
-          <img
+          <Image
             src={selectedProject.image}
             alt={selectedProject.title}
             className="w-full h-auto rounded-lg mb-4"
