@@ -16,14 +16,13 @@ export default function Navbar() {
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" }, 
   ];
-
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 20;
       setScrolled(isScrolled);
 
       // Auto-detect active section based on scroll position
-      const sections = links.map(link => document.querySelector(link.href));
+      const sections = links.map(link => document.querySelector(link.href) as HTMLElement | null);
       const scrollPosition = window.scrollY + 100;
 
       for (let i = sections.length - 1; i >= 0; i--) {

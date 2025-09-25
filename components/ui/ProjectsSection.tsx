@@ -26,11 +26,11 @@ const ProjectsSection: React.FC = () => {
     <h2 className="relative text-2xl sm:text-3xl md:text-5xl md:leading-tight tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-white to-white text-center mb-12">My Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         {projects.map((project, index) => (
-          <MinimalCard key={index} onClick={() => openModal(project)} className="cursor-pointer">
+          <div key={index} onClick={() => openModal(project)} className="cursor-pointer bg-neutral-900 border border-neutral-800 rounded-2xl p-4 hover:bg-neutral-800/80 transition-colors shadow-md">
             <MinimalCardImage src={project.image} alt={project.title} />
             <MinimalCardTitle>{project.title}</MinimalCardTitle>
             <MinimalCardDescription>{project.description}</MinimalCardDescription>
-          </MinimalCard>
+          </div>
         ))}
       </div>
 

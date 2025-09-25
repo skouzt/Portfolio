@@ -1,14 +1,10 @@
 "use client";
-import {
-  useScroll,
-  useTransform,
-  motion,
-} from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
 // Example: Import your stars components (adjust path as needed)
-import { ShootingStars } from '@/components/ui/shooting-star';
-import { StarsBackground } from '@/components/ui/stars-background';
+import { ShootingStars } from "@/components/ui/shooting-star";
+import { StarsBackground } from "@/components/ui/stars-background";
 
 interface TimelineEntry {
   title: string;
@@ -36,7 +32,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <section className=" rounded-md bg-neutral-900 flex flex-col relative w-full overflow-hidden">
+    <section className=" rounded-md flex flex-col relative w-full overflow-hidden">
       {/* Background effects */}
       <StarsBackground />
       <ShootingStars minDelay={200} maxDelay={800} />
