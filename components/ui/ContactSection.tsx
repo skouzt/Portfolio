@@ -52,7 +52,7 @@ const ContactSection = () => {
           className="border border-neutral-700 bg-transparent text-neutral-400 hover:bg-neutral-800 transition px-3 py-2 text-sm sm:px-4 sm:py-2 sm:text-base w-full sm:w-auto"
         >
           <a
-            href="https://www.linkedin.com/in/rashidkamar/"
+            href="https://www.linkedin.com/in/rashid-kamar/"
             target="_blank"
             rel="noopener noreferrer"
           >
