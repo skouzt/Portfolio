@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export default function Navbar() {
   const [active, setActive] = useState("Home");
@@ -64,9 +65,13 @@ export default function Navbar() {
       >
         {/* Mobile Menu Button (Hamburger) */}
         <div className="sm:hidden flex items-center justify-between w-full">
-          <h1 className="text-xl font-bold text-white">
-            R<span className="text-blue-500">K</span>
-          </h1>
+          <Image
+            src="/astronaut.png"
+            alt="Portfolio Logo"
+            width={40}
+            height={40}
+            className="object-contain"
+          />
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="text-white focus:outline-none p-1"
