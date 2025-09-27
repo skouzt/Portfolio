@@ -1,28 +1,32 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react"; // Import Menu and X icons
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   const [active, setActive] = useState("Home");
   const [scrolled, setScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const links = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
+    { name: "Education", href: "#education" },
     { name: "Experience", href: "#experience" },
     { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" }, 
+    { name: "Projects", href: "#projects" },
   ];
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 20;
       setScrolled(isScrolled);
 
       // Auto-detect active section based on scroll position
-      const sections = links.map(link => document.querySelector(link.href) as HTMLElement | null);
+      const sections = links.map(
+        (link) => document.querySelector(link.href) as HTMLElement | null
+      );
       const scrollPosition = window.scrollY + 100;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -35,7 +39,6 @@ export default function Navbar() {
     };
 
     handleScroll();
-
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
@@ -52,27 +55,27 @@ export default function Navbar() {
     >
       <div
         className={cn(
-            "relative flex items-center px-4 py-2 rounded-full backdrop-blur-lg border transition-all duration-300 mx-auto",
-            "w-[calc(100%-2rem)] sm:max-w-fit sm:justify-center", // full width on mobile, fit-content on desktop
-            scrolled
+          "relative flex items-center px-4 py-2 rounded-full backdrop-blur-lg border transition-all duration-300 mx-auto",
+          "w-[calc(100%-2rem)] sm:max-w-fit sm:justify-center",
+          scrolled
             ? "bg-neutral-900/80 border-white/10 shadow-lg"
             : "bg-transparent border-transparent shadow-none"
         )}
-        >
-
-
+      >
         {/* Mobile Menu Button (Hamburger) */}
         <div className="sm:hidden flex items-center justify-between w-full">
-            <h1 className="text-xl font-bold text-white">R<span className='text-blue-500'>K</span></h1>
-            <button
+          <h1 className="text-xl font-bold text-white">
+            R<span className="text-blue-500">K</span>
+          </h1>
+          <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-white focus:outline-none"
-            >
+            className="text-white focus:outline-none p-1"
+          >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+          </button>
         </div>
 
-        {/* Desktop Menu */}
+        {/* Desktop Menu - UNCHANGED */}
         <div className="hidden sm:flex items-center justify-center gap-6">
           {links.map((link) => (
             <a
@@ -90,24 +93,29 @@ export default function Navbar() {
           ))}
         </div>
       </div>
-      
-      {/* Mobile Collapsible Menu */}
+
+      {/* Mobile Menu - Improved */}
       <div
         className={cn(
-          "sm:hidden transition-all duration-300 ease-in-out overflow-hidden mt-2",
-          isMobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+          "sm:hidden transition-all duration-300 ease-in-out overflow-hidden mx-4 mt-2",
+          isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         )}
       >
-        <div className="flex flex-col items-center gap-4 py-4 bg-neutral-900/80 backdrop-blur-md border border-white/10 rounded-md">
-          {links.map((link) => (
+        <div className="bg-neutral-900/90 backdrop-blur-md border border-white/10 rounded-xl shadow-lg">
+          {links.map((link, index) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => {
                 setActive(link.name);
-                setIsMobileMenuOpen(false); // Close menu on click
+                setIsMobileMenuOpen(false);
               }}
-              className="text-white text-lg font-medium hover:text-blue-400"
+              className={cn(
+                "block px-6 py-4 text-lg font-medium transition-colors border-b border-white/5 last:border-b-0",
+                active === link.name
+                  ? "text-blue-500 bg-white/5"
+                  : "text-white hover:text-blue-400 hover:bg-white/5"
+              )}
             >
               {link.name}
             </a>

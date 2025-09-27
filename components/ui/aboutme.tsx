@@ -1,19 +1,14 @@
 "use client";
 
 export default function AboutMe() {
-  const interests = [
-    "UI Design",
-    "Web Animation",
-    "Music",
-    "Travel",
-    "Coffee",
-  ];
+  const interests = ["UI Design", "Web Animation", "Music", "Travel", "Coffee"];
 
   return (
     <section id="about" className="flex justify-center items-center py-20">
       <div className="max-w-2xl w-full bg-gradient-to-br from-neutral-900/70 to-neutral-800/70 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-white/10">
-
-        <h2 className=" text-gray-300 text-2xl font-bold text-center mb-6">About Me</h2>
+        <h2 className="relative text-2xl sm:text-3xl md:text-5xl md:leading-tight tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-white to-white text-center mb-12">
+          About Me
+        </h2>
 
         <div className="text-gray-300 space-y-4 text-center leading-relaxed">
           <p>
@@ -22,8 +17,8 @@ export default function AboutMe() {
             and Computer Science student who believes in the power of{" "}
             <span className="text-blue-400">beautiful, functional design</span>.
             My journey in tech is driven by an obsession with creating{" "}
-            <span className="text-blue-400">seamless user experiences</span> that
-            bridge the gap between complex technology and human intuition.
+            <span className="text-blue-400">seamless user experiences</span>{" "}
+            that bridge the gap between complex technology and human intuition.
           </p>
 
           <p>
@@ -32,8 +27,8 @@ export default function AboutMe() {
             diving deep into the latest{" "}
             <span className="text-blue-400">React frameworks</span>, you&apos;ll
             find me exploring the intersection of{" "}
-            <span className="text-blue-400">creativity and code</span>. I believe
-            that great software isn&apos;t just functional—it&apos;s{" "}
+            <span className="text-blue-400">creativity and code</span>. I
+            believe that great software isn&apos;t just functional—it&apos;s{" "}
             <span className="text-blue-400">inspiring</span>.
           </p>
 
@@ -48,7 +43,9 @@ export default function AboutMe() {
 
         {/* Interests */}
         <div className="mt-8 text-center">
-          <h3 className=" text-gray-300 font-semibold mb-4">When I&apos;m not coding</h3>
+          <h3 className=" text-gray-300 font-semibold mb-4">
+            When I&apos;m not coding
+          </h3>
           <div className="flex flex-wrap justify-center gap-2">
             {interests.map((item) => (
               <span

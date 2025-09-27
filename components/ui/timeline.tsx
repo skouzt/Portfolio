@@ -2,10 +2,6 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
-// Example: Import your stars components (adjust path as needed)
-import { ShootingStars } from "@/components/ui/shooting-star";
-import { StarsBackground } from "@/components/ui/stars-background";
-
 interface TimelineEntry {
   title: string;
   content: React.ReactNode;
@@ -33,11 +29,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <section className=" rounded-md flex flex-col relative w-full overflow-hidden">
-      {/* Background effects */}
-      <StarsBackground />
-      <ShootingStars minDelay={200} maxDelay={800} />
-
-      {/* Timeline Content */}
       <div
         className="w-full text-white font-sans md:px-10 relative z-10"
         ref={containerRef}
