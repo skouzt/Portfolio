@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+
 
 export default function Navbar() {
   const [active, setActive] = useState("Home");
@@ -19,33 +21,43 @@ export default function Navbar() {
     { name: "Projects", href: "#projects" },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 20;
-      setScrolled(isScrolled);
+useEffect(() => {
+  if ("scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual";
+  }
 
-      // Auto-detect active section based on scroll position
-      const sections = links.map(
-        (link) => document.querySelector(link.href) as HTMLElement | null
-      );
-      const scrollPosition = window.scrollY + 100;
+  window.scrollTo(0, 0);
+  setActive("Home");
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && section.offsetTop <= scrollPosition) {
-          setActive(links[i].name);
-          break;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute("id");
+          if (id) {
+            const match = links.find((l) => l.href === `#${id}`);
+            if (match) setActive(match.name);
+          }
         }
-      }
-    };
+      });
+    },
+    {
+      root: null,
+      threshold: 0.6, // section must be 60% visible to count as active
+    }
+  );
 
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
+  const sections = links.map((link) =>
+    document.querySelector(link.href)
+  ) as HTMLElement[];
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  sections.forEach((sec) => sec && observer.observe(sec));
+
+  return () => {
+    sections.forEach((sec) => sec && observer.unobserve(sec));
+  };
+}, []);
+
 
   return (
     <nav
@@ -72,6 +84,19 @@ export default function Navbar() {
             height={40}
             className="object-contain"
           />
+           {/* Middle: Dynamic Active Section */}
+          <AnimatePresence mode="wait">
+          <motion.span
+            key={active} // important: triggers animation on change
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -5 }}
+            transition={{ duration: 0.3 }}
+            className="text-white text-base font-medium"
+          >
+            {active}
+          </motion.span>
+        </AnimatePresence>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="text-white focus:outline-none p-1"

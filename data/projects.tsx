@@ -23,4 +23,12 @@ export const projects: Project[] = [
     link: "https://github.com/skouzt/project2",
     image: "/images/projects/converso.png",
   },
+  {
+  title: "Mira - AI Voice Therapist",
+  description: "A calming AI voice therapist that listens, understands, and guides you through emotional wellness.",
+  fullDescription: "Mira is an AI-powered voice therapist designed to support mental wellness. Through natural conversations, it helps users manage stress, track mood patterns, and practice guided therapeutic exercises. With a warm, intuitive interface, Mira creates a safe space for self-reflection and growth.",
+  link: "https://github.com/skouzt/ai_therapist",
+  image: "/images/projects/Mira.png",
+},
+
 ];
